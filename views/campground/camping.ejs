@@ -1,0 +1,50 @@
+<% include ../partials/head %>
+
+
+
+
+<div class="container">
+
+    <header class="jumbotron">
+        
+       <h1>Welcome to the camping area</h1>
+
+       <a class="btn btn-primary btn-lg" href="/camp/new">Add new camp</a>
+       
+    </header>
+
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+        
+        
+    
+    <% camp.forEach(function(site){ %>
+
+    <div class="col-md-3">
+     <div class="thumbnail">
+    
+     <img src="<%= site.src %>">
+     
+     <div class="caption text-center">
+         
+          <h2><strong> <%= site.name %> </strong></h2>
+         
+     </div>
+     <p style="text-align: center;">
+     <a href="/camp/<%= site._id %>" class="btn btn-primary" >More info</a>
+     </p>
+     </div>
+     
+    </div>
+     
+      
+    <% }); %>
+   
+    
+    </div>
+    
+</div>
+
+<p>P.S you can die peacefully in that corner</p>
+
+
+<% include ../partials/foot %>
